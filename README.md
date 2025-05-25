@@ -33,7 +33,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Visit the live website](https://classy-mandazi-cec6d9.netlify.app/)
 
 ## My process
 

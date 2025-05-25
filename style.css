@@ -1,0 +1,316 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+
+:root {
+  --white: hsl(0, 100%, 100%);
+  --gray-200: hsl(270, 3%, 87%);
+  --gray-400: hsl(212, 12%, 71%);
+  --purple-950: hsl(278, 68%, 11%);
+  --red-400: hsl(0, 100%, 66%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url("./images/bg-main-desktop.png") left / 30% 100% no-repeat;
+  min-height: 100vh;
+  font-family: "Space Grotesk", sans-serif;
+  display: flex;
+}
+
+.exp-date input:invalid,
+.error {
+  outline: 1px solid var(--red-400); /* or any styling you want */
+}
+
+#name-error,
+#number-error,
+#date-error,
+#cvc-error,
+#blank-number,
+#blank-name {
+  color: var(--red-400);
+  display: none;
+}
+
+.scale-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#front-card {
+  width: 80vw;
+  max-width: 447px;
+  aspect-ratio: 447 / 245;
+  background: url("./images/bg-card-front.png") no-repeat center/cover;
+  position: fixed;
+  left: 15vw;
+  top: 20vh;
+  color: var(--white);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  z-index: 2; /* ensure it's above the back card */
+}
+
+.card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+  position: relative;
+}
+
+.number {
+  margin: 0 30px;
+  font-size: 1.5vw;
+}
+
+.name-and-date {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 30px 25px 30px;
+}
+
+#front-card svg {
+  position: absolute;
+
+  height: auto;
+  top: 2vw;
+  left: 2vw;
+}
+
+#back-card {
+  width: 80vw;
+  max-width: 447px;
+  aspect-ratio: 447 / 245;
+  background: url("./images/bg-card-back.png") no-repeat center/cover;
+  position: fixed;
+  left: 25vw;
+  top: 50vh;
+  color: var(--white);
+  font-size: 1vw;
+}
+
+.cvc {
+  color: var(--white);
+  position: relative;
+  top: 45%;
+  left: 80%;
+}
+
+form {
+  position: absolute;
+  padding: 5px;
+  top: 30%;
+  left: 60%;
+  display: flex;
+  flex-direction: column;
+  width: 315px;
+  gap: 45px;
+  font-size: 12px;
+}
+
+#card-number:invalid,
+#cvc:invalid {
+  outline: 1px solid var(--red-400);
+}
+
+.cardholder-name,
+.card-number,
+.cvc-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.cvc-details {
+  justify-content: right;
+}
+
+#cardholder-name,
+#card-number {
+  height: 30px;
+  width: 300px;
+  padding-left: 15px;
+  border-radius: 7px;
+  border: none;
+  outline: 1px solid var(--purple-950);
+  margin-top: 5px;
+}
+
+.exp-and-cvc {
+  width: 315px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#exp-date {
+  border: none;
+}
+
+#exp-date input {
+  height: 30px;
+  width: 50px;
+  padding-left: 7px;
+  border-radius: 7px;
+  border: none;
+  outline: 1px solid var(--purple-950);
+  margin-top: 5px;
+  margin-right: 15px;
+}
+
+.cvc-details input {
+  height: 30px;
+  width: 130px;
+  padding-left: 7px;
+  border-radius: 7px;
+  border: none;
+  outline: 1px solid var(--purple-950);
+  margin-top: 5px;
+}
+
+#confirm-btn {
+  height: 40px;
+  max-width: 315px;
+  background-color: var(--purple-950);
+  color: var(--white);
+  border-radius: 7px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+#completed {
+  position: absolute;
+  top: 30%;
+  left: 60%;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 315px;
+  gap: 15px;
+  font-size: 12px;
+}
+
+#completed img {
+  height: 85px;
+  width: 85px;
+}
+
+.thank-you {
+  font-size: 32px;
+  color: var(--purple-950);
+}
+
+.confirmation {
+  font-size: 16px;
+  color: var(--gray-400);
+}
+
+.btn {
+  width: 315px;
+  height: 40px;
+  background-color: var(--purple-950);
+  color: var(--white);
+  border: none;
+  border-radius: 7px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  align-self: flex-end;
+  margin: 0 auto;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 768px) {
+  body {
+    background: url("./images/bg-main-mobile.png") top / 100% 40% no-repeat;
+  }
+
+  #front-card {
+    position: absolute;
+    width: 90vw;
+    font-size: 2.5vw;
+    top: 15%;
+    left: 15px;
+    margin: 20px auto;
+  }
+
+  .number {
+    font-size: 4vw;
+  }
+
+  #back-card {
+    width: 90vw;
+    max-width: 447px;
+    max-height: 245px;
+    overflow: hidden;
+    aspect-ratio: 447 / 245;
+    position: absolute;
+    top: 25px;
+    left: 15%;
+  }
+
+  .cvc {
+    font-size: 2vw;
+  }
+
+  form,
+  #completed {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    overflow: hidden;
+    width: 90vw;
+    max-width: 400px;
+    margin: auto;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  #front-card {
+    width: 80vw; /* Slightly larger */
+    top: 25%;
+  }
+
+  .name-and-date {
+    font-size: 4vw;
+  }
+
+  .number {
+    font-size: 6vw;
+  }
+
+  #back-card {
+    width: 80vw;
+    top: 100px;
+  }
+
+  .cvc {
+    font-size: 3vw;
+  }
+
+  form,
+  #completed {
+    width: 95vw;
+    font-size: 13px;
+    overflow: hidden;
+    top: 70%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+  }
+}
